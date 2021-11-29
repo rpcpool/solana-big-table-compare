@@ -23,8 +23,8 @@ The script/program should do:
 3. Allow us to quickly add more checks (e.g. signature comparisons) in the future.
 
 The script/program should support:
-- Configuration for two separate BigTable instances
-- A starting slot with a default of 0
+- Configuration for two separate BigTable instances.
+- A starting slot with a default of zero (0).
 - An ending slot with a default of the current slot according to an RPC call.
 - Specify rate limits to be sleep briefly within a loop. Default TBD.
 - Specification of a log file with the default in the current directory.
