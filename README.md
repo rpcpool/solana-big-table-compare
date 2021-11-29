@@ -27,8 +27,8 @@ The script/program should support:
 - A starting slot with a default of zero (0).
 - An ending slot with a default of the current slot according to an RPC call.
 - Specify rate limits to be sleep briefly within a loop. Default TBD.
-- Specification of a log file with the default in the current directory.
-- Specification of different error levels [INFO, WARN, ERROR] with default INFO.
+- Specification of a log file location with the default in the current directory.
+- Specification of different log error levels [INFO, WARN, ERROR] with default INFO.
 - Use of environment variables or command line switches for the above settings.
 - Error handling, lots of error handling.
 
