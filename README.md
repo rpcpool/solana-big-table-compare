@@ -26,6 +26,7 @@ The script/program should support:
 - Configuration for two separate BigTable instances
 - A starting slot with a default of 0
 - An ending slot with a default of the current slot according to an RPC call.
+- Specify rate limits to be sleep briefly within a loop. Default TBD.
 - Specification of a log file with the default in the current directory.
 - Specification of different error levels [INFO, WARN, ERROR] with default INFO.
 - Use of environment variables or command line switches for the above settings.
