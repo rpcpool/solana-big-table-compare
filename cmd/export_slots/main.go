@@ -72,4 +72,6 @@ func main() {
 	if err != nil {
 		log.Error("Error iterating slots", zap.Error(err))
 	}
+
+	log.Info("Finished reading slots")
 }
