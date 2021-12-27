@@ -39,3 +39,32 @@ Your solution should be written in a popular software language and be easy to ru
 
 ## BigTable Access
 We can provide read-only credentials for two different BigTable Instances to use during the Hackathon. Please contact `@brianlong` on Twitter or Telegram for details.
+
+## Usage
+
+### Requirements
+
+- Git
+- Go 1.17
+- Basic Linux or macOS system
+
+### Verifying available slot numbers
+
+The `./cmd/export_slots` script will scan a `blocks` table and print out all slot numbers.
+Outputted slot numbers are left padded to ensure lexicographic ordering.
+
+```shell
+export GOOGLE_APPLICATION_CREDENTIALS=/path/to/bigtable-service-account.json
+go run ./cmd/export_slots -project my-project-id > my-bigtable-slots.txt
+```
+
+The export will take up to a few hours for large Bigtable instances.
+
+Suppose you have two lists of slots, `slots1.txt` and `slots2.txt`.
+Using [`comm`](https://linux.die.net/man/1/comm), we can quickly check for differences.
+
+- Get the first slot number: `head -n1 slots1.txt`
+- Get the last slot number:  `tail -n1 slots1.txt`
+- List slots only in the first table:  `comm -23 slots1.txt slots2.txt`
+- List slots only in the second table: `comm -13 slots1.txt slots2.txt`
+- List duplicate slots in both tables: `comm -12 slots1.txt slots2.txt`
